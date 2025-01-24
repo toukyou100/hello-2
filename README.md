@@ -1,5 +1,5 @@
-■URL
-http://localhost:8080/
+■入口用のURL
+localhost:8080/
 
 ■手順は以下のURLをご参照（HTML上に誤ったところがあるので、大部参照可能）
 https://qiita.com/TaikiTkwkbysh/items/e47c67ac685a2618461a
