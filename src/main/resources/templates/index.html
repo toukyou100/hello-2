@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+<title>Title</title>
+</head>
+<body class="bg-light">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<p class="text-danger" th:text="#{confirmationMessage}"></p>
+				<form id="loginForm" th:action="@{/loginSubmit}" th:object="${sample}" method="post"> 
+
+					
+					<div class="mb-3">
+						<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></span><br>
+						<label for="name" th:text="#{name}"></label>
+						<input type="text" class="form-control" th:field="*{name}">
+						
+					</div>
+					
+					<div class="mb-3">
+						<span th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red"></span><br>
+						<label for="address" th:text="#{address}"></label>
+						<input type="text"class="form-control" th:field="*{address}">
+					</div>
+					
+					<div class="mb-3">
+						<span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" style="color: red"></span><br>
+						<label for="phone" th:text="#{phoneNumber}"></label>
+						<input type="tel"class="form-control" th:field="*{phoneNumber}">
+					</div>
+					
+					<div class="mb-3">
+						<span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color: red"></span><br>
+						<label for="price" th:text="#{price}"></label>
+						<input type="text"class="form-control" th:field="*{price}">
+					</div>
+					
+					<div class="mb-3">
+						<span th:if="${#fields.hasErrors('paymentDeadline')}" th:errors="*{paymentDeadline}" style="color: red"></span><br>
+						<label for="paymentDeadline" th:text="#{paymentDeadline}"></label>
+						<input type="tel"class="form-control" th:field="*{paymentDeadline}">
+					</div>
+					
+					<button type="submit" id="loginButton">ログイン</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
